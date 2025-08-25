@@ -130,34 +130,37 @@ const UsersPage = () => {
                   </td>
                 </tr>
               ) : (
-                users.map((user, index) => {
-                  const userProjects = getUserProjects(user._id);
-                  return (
-                    <tr key={user._id}>
-                      <td>{index + 1}</td>
-                      <td>{user.name}</td>
-                      <td>{user.email}</td>
-                      <td>{user.role}</td>
-                      <td>{new Date(user.createdAt).toLocaleDateString()}</td>
-                      <td>
-                        {userProjects.length > 0
-                          ? userProjects.map((p) => p.name).join(", ")
-                          : "No projects"}
-                      </td>
-                      <td className="action-icons">
-                        <FaEdit className="edit-icon" onClick={() => openEditModal(user)} />
-                        <FaTrash className="delete-icon" onClick={() => handleDelete(user._id)} />
-                      </td>
-                    </tr>
-                  );
-                })
+                users
+                  .filter((user) => user._id !== currentUser._id) // exclude logged-in user
+                  .map((user, index) => {
+                    const userProjects = getUserProjects(user._id);
+                    return (
+                      <tr key={user._id}>
+                        <td>{index + 1}</td>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.role}</td>
+                        <td>{new Date(user.createdAt).toLocaleDateString()}</td>
+                        <td>
+                          {userProjects.length > 0
+                            ? userProjects.map((p) => p.name).join(", ")
+                            : "No projects"}
+                        </td>
+                        <td className="action-icons">
+                          <FaEdit className="edit-icon" onClick={() => openEditModal(user)} />
+                          <FaTrash className="delete-icon" onClick={() => handleDelete(user._id)} />
+                        </td>
+                      </tr>
+                    );
+                  })
               )}
             </tbody>
+
           </table>
         </div>
       </div>
 
-      
+
       {openModal && (
         <div className="modal-overlay">
           <div className="modal-box">
@@ -198,7 +201,7 @@ const UsersPage = () => {
                 required
                 disabled={currentUser.role !== "admin"}
               >
-                <option value="admin">Admin</option>
+                <option v Projectsalue="admin">Admin</option>
                 <option value="manager">Manager</option>
                 <option value="employee">Employee</option>
               </select>
