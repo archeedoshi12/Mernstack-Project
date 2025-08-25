@@ -9,8 +9,16 @@ const userRoleRoute = require("./routes/userRoutes");
 const app = express();
 connectDB();
 
-app.use(cors());
 app.use(express.json());
+const allowedOrigins = [
+  "https://mernstack-project-iota.vercel.app" // your deployed frontend on vercel
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 app.use("/api/auth", authRoute);
 app.use("/admin/api/projects", projectRoute);
