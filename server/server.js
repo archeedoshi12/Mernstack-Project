@@ -10,10 +10,12 @@ const app = express();
 connectDB();
 
 app.use(express.json());
-app.use(cors({
-  origin: "https://mernstack-project-e9at-one.vercel.app",
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: [/\.vercel\.app$/],
+    credentials: true,
+  })
+);
 
 app.use("/api/auth", authRoute);
 app.use("/admin/api/projects", projectRoute);
