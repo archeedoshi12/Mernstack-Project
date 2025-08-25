@@ -12,6 +12,7 @@ import DashboardLayout from "./components/Dashboardlayout";
 import Loader from "./components/Loader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./global.css";
 
 const getToken = () => localStorage.getItem("token");
 const PrivateRoute = ({ children }) => {
