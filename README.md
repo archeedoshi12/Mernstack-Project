@@ -27,7 +27,7 @@ npm install
 
 nodemon server.js
 
-The backend will run at: http://localhost:5000
+The backend will run at: https://mernstack-1-0tp6.onrender.com
 
 🔹 Frontend
 
@@ -46,4 +46,4 @@ npm install
 npm start
 
 
-The frontend will run at: http://localhost:3000
+The frontend will run at the deployed URL: mernstack-project-e9at-one.vercel.app
