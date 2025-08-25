@@ -46,4 +46,4 @@ npm install
 npm start
 
 
-The frontend deployed link will run at: mernstack-project-jv8k.vercel.app
+The frontend deployed link will run at: mernstack-project-36aj.vercel.app
