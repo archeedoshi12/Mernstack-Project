@@ -43,11 +43,10 @@
 
 .logout-btn {
   margin-top: auto;
-  color: #fff;
+  color: #4f63f3;
   font-weight: 600;
 }
 
 .logout-btn:hover {
-  background-color: #e4e7ff;
   color: #4f63f3;
 }
