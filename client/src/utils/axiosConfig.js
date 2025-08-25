@@ -7,7 +7,7 @@ export const injectStore = (store) => {
 };
 
 const api = axios.create({
-  baseURL: "https://mernstack-project-2.onrender.com/api",
+  baseURL: "https://mernstack-project-3.onrender.com/api",
 });
 
 api.interceptors.request.use(
