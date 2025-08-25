@@ -1,6 +1,6 @@
 import api from "./api";
 
-const API_URL = "https://mernstack-project-2.onrender.com/admin/api/projects";
+const API_URL = "https://mernstack-project-3.onrender.com/admin/api/projects";
 
 export const getProjects = async () => {
   try {
