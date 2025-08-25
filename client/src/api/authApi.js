@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://mernstack-1-0tp6.onrender.com/api/auth";
+const API_URL = "https://mernstack-project-2.onrender.com/api/auth";
 
 export const registerUser = async (userData) => {
   const response = await axios.post(`${API_URL}/register`, userData);
